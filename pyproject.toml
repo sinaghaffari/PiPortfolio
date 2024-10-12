@@ -10,6 +10,6 @@ requires = ["setuptools"]
 [project]
 name = "schwab_slicer_portfolio"
 
-version = "1.0.2"
+version = "1.0.3"
 
 requires-python = ">=3.12"

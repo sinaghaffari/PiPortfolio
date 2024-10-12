@@ -12,7 +12,7 @@ class Node(ABC):
         pass
 
     @abstractmethod
-    def _to_dict(self):
+    def to_dict(self):
         pass
 
     @classmethod
@@ -54,11 +54,11 @@ class Equity(Node):
         self.name = ticker
         self.ticker = ticker
 
-    def _to_dict(self):
+    def to_dict(self):
         return {'type':'EQUITY', 'ticker':self.ticker, }
 
     def to_json(self) -> str:
-        return json.dumps(self._to_dict())
+        return json.dumps(self.to_dict())
 
     @classmethod
     def from_dict(cls, equity_dict: dict):
@@ -97,15 +97,15 @@ class Portfolio(Node):
         child_names = [child.name for child in self.children.keys()]
         assert len(child_names) == len(set(child_names))
 
-    def _to_dict(self):
+    def to_dict(self):
         return {
             'type':"PORTFOLIO",
             'name':self.name,
-            'children':[[child._to_dict(), str(pct)] for child, pct in self.children.items()]
+            'children':[[child.to_dict(), str(pct)] for child, pct in self.children.items()]
         }
 
     def to_json(self) -> str:
-        return json.dumps(self._to_dict())
+        return json.dumps(self.to_dict())
 
     @classmethod
     def from_dict(cls, node_dict: dict) -> Self:
