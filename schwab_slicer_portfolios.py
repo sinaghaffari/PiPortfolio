@@ -144,7 +144,7 @@ class Portfolio(Node):
         children = [f"{node.pretty(indent + 2)}: {pct}" for node, pct in self.children.items()]
         return (
             f"{'  ' * indent}Portfolio(\n"
-            f"{'  ' * (indent + 1)}""name='{self.name}',\n"
+            f"{'  ' * (indent + 1)}name='{self.name}',\n"
             f"{'  ' * (indent + 1)}children={{\n{'\n'.join(children)}\n"
             f"{'  ' * (indent + 1)}}})"
         )
