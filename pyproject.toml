@@ -1,15 +1,9 @@
-# Guide (user-friendly):
-# https://packaging.python.org/en/latest/guides/writing-pyproject-toml/
-
-# Specification (technical, formal):
-# https://packaging.python.org/en/latest/specifications/pyproject-toml/
-
 [build-system]
 requires = ["setuptools"]
 
 [project]
-name = "schwab_slicer_portfolio"
+name = "pi_portfolio"
 
-version = "1.1.1"
+version = "1.0"
 
 requires-python = ">=3.12"
