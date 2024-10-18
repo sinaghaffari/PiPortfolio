@@ -4,6 +4,6 @@ requires = ["setuptools"]
 [project]
 name = "pi_portfolio"
 
-version = "3.0"
+version = "3.0.1"
 
 requires-python = ">=3.12"
