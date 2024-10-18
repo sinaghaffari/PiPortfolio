@@ -142,10 +142,11 @@ class Portfolio(Node):
 
     def pretty(self, indent: int = 0) -> str:
         children = [f"{node.pretty(indent + 2)}: {pct}" for node, pct in self.children.items()]
+        formatted_children = "\n".join(children)
         return (
             f"{'  ' * indent}Portfolio(\n"
             f"{'  ' * (indent + 1)}name='{self.name}',\n"
-            f"{'  ' * (indent + 1)}children={{\n{'\n'.join(children)}\n"
+            f"{'  ' * (indent + 1)}children={{\n{formatted_children}\n"
             f"{'  ' * (indent + 1)}}})"
         )
 
